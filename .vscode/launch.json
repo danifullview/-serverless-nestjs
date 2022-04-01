@@ -1,0 +1,50 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Nestjs App",
+      "type": "node",
+      "request": "launch",
+      "args": ["${workspaceFolder}/src/main.ts"],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "sourceMaps": true,
+      "env": {},
+      "cwd": "${workspaceRoot}",
+      "console": "integratedTerminal",
+      "protocol": "inspector"
+    },
+    {
+      "name": "Debug Serverless",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": ["--inspect", "--debug-port=9229"],
+      "runtimeVersion": "default",
+      "program": "${workspaceFolder}/node_modules/serverless/bin/serverless.js",
+      "args": ["offline", "start", "--stage", "dev", "--apiKey", "apikey"],
+      "env": {
+        "AWS_PROFILE": "test-profile",
+        "FV_LOGLEVEL": "info",
+        "FV_OFFLINE": "true",
+        "SEQ_INGESTION_URL": "http://localhost:5641",
+        "SEQ_API_KEY": "ijANBJaHeiKQwnwI0bsq"
+      },
+      "port": 9229,
+      "console": "integratedTerminal",
+      "sourceMapPathOverrides": {
+        "webpack:///./~/*": "${workspaceRoot}/node_modules/*",
+        "webpack:///./*": "${workspaceRoot}/*",
+        "webpack:///*": "${workspaceRoot}/*",
+        "webpack-internal:///./*": "${workspaceRoot}/*"
+      }
+    }
+  ]
+}
