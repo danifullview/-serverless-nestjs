@@ -6,5 +6,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true
 }
